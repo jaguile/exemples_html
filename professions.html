@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quadrat Interactiu</title>
+<style>
+  /* Quadrícules */
+  .quadrat {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    display: inline-block;
+    background-color: #fff;
+  }
+</style>
+</head>
+<body>
+<!-- Graella -->
+<div id="contenidor"></div>
+
+<script>
+  // Funció que dibuixa la graella
+  function crearQuadrat(numFiles, numColumnes) {
+    let contenidor = document.getElementById("contenidor");
+    for (let i = 0; i < numFiles; i++) {
+      for (let j = 0; j < numColumnes; j++) {
+        let quadrat = document.createElement("div");
+        quadrat.className = "quadrat";
+        quadrat.addEventListener("click", function() {
+          // Canviem el color de fons al fer click
+          if (this.style.backgroundColor === "black") {
+            this.style.backgroundColor = "white"; // A blanc si és negre
+          } else {
+            this.style.backgroundColor = "black"; // A negre si és blanc
+          }
+        });
+        contenidor.appendChild(quadrat);
+      }
+      contenidor.appendChild(document.createElement("br")); // Final de fila
+    }
+  }
+
+  crearQuadrat(10, 30);
+</script>
+</body>
+</html>

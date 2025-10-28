@@ -3,7 +3,9 @@
 `professions.html` genera una graella per escriure amb quadradets.
 
 ## Layout a bootstrap
-[Documentació bootstrap en espanyol](https://getbootstrap.esdocu.com/docs/5.1/)
+[Documentació bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+
+[Exemples](https://getbootstrap.com/docs/5.3/examples/grid/)
 
 ### Contenidors
 Els contenidors centren i contenen la resta d'elements. Depèn del viewport, tenen el 100% de l'amplada o un `max-width` que va determinat per una sèrie de breakpoints responsive. En concret són sis breakpoints. Els breakpoints es basen en media-queries `min-width` que depenen de l'amplada del dispositiu. Per exemple: 
@@ -88,3 +90,21 @@ Hi han dos maneres:
 
 ### Gutters
 Són el padding entre les columnes.
+
+## Annex. Conceptes CSS
+
+### Viewport
+
+El **viewport** és la part visible d’una pàgina web dins de la finestra del navegador. És a dir, la zona que l’usuari veu a la pantalla **sense fer scroll**. És la finestra a través de la qual es mostra una web.
+
+El **viewport** és un concepte molt important en disseny responsive.
+
+Abans d'aquest concepte, i abans de l'arribada dels *smartphones*, les pàgines `html` estaven pensades per pantalles grans. Quan van aparèixer els mòbils, els seus navegadors simulaven la pantalla del dispositiu com si es tractés d'una pantalla gran i aleshores feien *zoom out* de la pàgina fins ajustar-la a aquesta mida. D'aquesta manera aquestes pàgines es veien molt petites. Per solucionar-lo, es va introduir **la meta-etiqueta viewport** a `HTML`.
+
+Amb **la meta-etiqueta viewport** tu pots controlar l'amplada del **viewport** i l'escalat inicial de la pàgina. Exemple:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+Amb aquest exemple estem dient que el **viewport** ha de ser justament el tamany de la pantalla i que inicialment la pàgina es mostri sense escalat. Amb el valor `width=device-width` el navegador ajusta els elements segons la pantalla real (no virtual) i el `CSS` *responsive* que tinguis fa la resta.
